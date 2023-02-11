@@ -105,17 +105,13 @@ body {
 
 .box {
     grid-column: span 3;
-    display: flex;
-    justify-content: center;
     margin-bottom: 20px;
-    
+    grid-column: span 3;
 }
 
-.box h3 {
-    display: wrap;
-    justify-content: center;
+/* .box h3 {
     color: #fff;
-}
+} */
 
 .line {
         grid-column: 2/12;
@@ -128,8 +124,6 @@ body {
 }
 
 .box3 {
-    display: flex;
-    justify-content: center;
     margin-top: 20px;
     grid-column: span 3;
     grid-row: 5/6;
