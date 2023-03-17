@@ -1,0 +1,7 @@
+[3/17/2023, 11:00:06 AM] layer "music-disc.png": Duplicate path: music-disc.png
+[3/17/2023, 11:00:06 AM] layer "music-disc.png": Duplicate path: music-disc.png
+[3/17/2023, 11:00:06 AM] layer "music-disc.png": Duplicate path: music-disc.png
+[3/17/2023, 11:00:06 AM] layer "music-disc.png": Duplicate path: music-disc.png
+[3/17/2023, 11:00:06 AM] layer "music-disc.png": Duplicate path: music-disc.png
+[3/17/2023, 11:00:06 AM] layer "music-disc.png": Duplicate path: music-disc.png
+[3/17/2023, 11:00:06 AM] layer "music-disc.png": Duplicate path: music-disc.png

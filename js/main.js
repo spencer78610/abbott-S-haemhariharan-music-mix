@@ -2,27 +2,25 @@ console.log('JS iss running...')
 
 // Drag and drop
 let theInsterments = document.querySelectorAll('#music-images img'),
-    dropZones = document.querySelectorAll('#music-player div');
+    musicPlayer = document.querySelector('#music-player')
+    dropZones = document.querySelectorAll('.drop-zone');
 
 function handleStartDrag() {
     console.log('started dragging this piece:', this);
-
-
+    
 	draggedPiece = this;
 }
 
+function handleDragOver(e) { 
+	e.preventDefault(); 
+	console.log('dragged over me'); 
+}
+
 function handleDrop(e) {
-    e.preventDefult();
+    e.preventDefault();
+    console.log('dropped something on me');
 
     const dropZone = this;
-    const existingPiece = dropZone.querySelector('div');
-    if (existingPiece) {
-        puzzleBoard.insertBefore(draggedPiece, existingPiece);
-        dropZone.removeChild(existingPiece);
-        mainBoard.appendChild(existingPiece);
-    }
-
-    dropZone.appendChild(draggedPiece);
 
     draggedPiece.classList.add("dropped");
 
@@ -31,6 +29,8 @@ function handleDrop(e) {
 }
 
 theInsterments.forEach(image => image.addEventListener("dragstart", handleStartDrag));
+
+dropZones.forEach(zone => zone.addEventListener("dragover", handleDragOver));
 
 dropZones.forEach(zone => zone.addEventListener('drop', handleDrop));
 
@@ -54,8 +54,7 @@ function pausetrack() { audioEl.pause();}
 
 // audio
 instermentIcons.forEach(icon => icon.addEventListener('drop', loadaudio));
-// change dragstart to dropped for music to play on drop
-// just need to make the drop box
+
 playbutton.addEventListener('click', playtrack);
 
 pausebutton.addEventListener('click', pausetrack);
