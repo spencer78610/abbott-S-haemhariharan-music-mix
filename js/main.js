@@ -1,5 +1,6 @@
 console.log('JS iss running...')
 
+// Drag and drop
 let theInsterments = document.querySelectorAll('#music-images img'),
     dropZones = document.querySelectorAll('#music-player img');
 
@@ -32,6 +33,32 @@ function handleDrop(e) {
 theInsterments.forEach(image => image.addEventListener("dragstart", handleStartDrag));
 
 dropZones.forEach(zone => zone.addEventListener('drop', handleDrop));
+
+// audio
+let instermentIcons = document.querySelectorAll('#music-images img'),
+    audioEl = document.querySelector('audio'),
+    playbutton = document.querySelector('#play'),
+    pausebutton = document.querySelector('#pause');
+
+function loadaudio() {
+        audioEl.src = `audio/${this.dataset.trackref}.mp3`;
+        audioEl.load();
+        playtrack();
+}
+
+function playtrack() { audioEl.play();}
+
+function pausetrack() { audioEl.pause();}
+
+
+
+// audio
+instermentIcons.forEach(icon => icon.addEventListener('dragstart', loadaudio));
+// change dragstart to dropped for music to play on drop
+// just need to make the drop box
+playbutton.addEventListener('click', playtrack);
+
+pausebutton.addEventListener('click', pausetrack);
 
 
 
