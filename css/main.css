@@ -109,7 +109,7 @@ body {
     grid-column: 1/-1;
     display: flex;
     justify-content: space-evenly;
-    background: linear-gradient(to bottom, #63a3ff, #b6dcff, #72beff);
+    background: linear-gradient(to bottom, #f8a912, #f7803f, #faf566);
     border-radius: 50px;
     padding: 5px 0;
 }
