@@ -146,6 +146,7 @@ body {
 .box {
     margin-top: 20px;
     grid-column: span 3;
+    text-align: center;
 }
 
 
