@@ -10,13 +10,6 @@ function handleStartDrag() {
 	draggedPiece = this;
 }
 
-function handleDragOver(e) { 
-	e.preventDefault(); 
-	console.log('dragged over me'); 
-}
-
-  
-
 function handleDrop(e) {
     // e.preventDefult();
 
@@ -33,13 +26,13 @@ function handleDrop(e) {
     draggedPiece.classList.add("dropped");
 
     draggedPiece;
+    // get images to drop onto records and disapear
 }
 
 theInsterments.forEach(image => image.addEventListener("dragstart", handleStartDrag));
 
 dropZones.forEach(zone => zone.addEventListener('drop', handleDrop));
 
-dropZones.forEach(zone => zone.addEventListener("dragover", handleDragOver));
 
 
 
