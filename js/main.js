@@ -2,7 +2,7 @@ console.log('JS iss running...')
 
 // Drag and drop
 let theInsterments = document.querySelectorAll('#music-images img'),
-    musicPlayer = document.querySelector('#music-player')
+    musicPlayer = document.querySelector('#music-player'),
     dropZones = document.querySelectorAll('.drop-zone');
 
 function handleStartDrag() {
@@ -18,14 +18,13 @@ function handleDragOver(e) {
 
 function handleDrop(e) {
     e.preventDefault();
+
+        playtrack();
+
     console.log('dropped something on me');
 
     const dropZone = this;
-
-    draggedPiece.classList.add("dropped");
-
-    draggedPiece;
-    // get images to drop onto records and disapear
+    
 }
 
 theInsterments.forEach(image => image.addEventListener("dragstart", handleStartDrag));
@@ -58,56 +57,3 @@ instermentIcons.forEach(icon => icon.addEventListener('drop', loadaudio));
 playbutton.addEventListener('click', playtrack);
 
 pausebutton.addEventListener('click', pausetrack);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Audio
-
-// // select all place holder images
-// let albumCovers = document.querySelectorAll('.audio img'),
-// audioEl = document.querySelector('audio'),
-// playbutton = document.querySelector("#playbutton"),
-// pausebutton = document.querySelector("#pausebutton"),
-// rewindbutton = document.querySelector("#rewindbutton");
-
-// function loadAudio () {
-//     // find the right audio track and 
-//     audioEl.src = `audio/${this.dataset.trackref}.mp3`;
-//     audioEl.load();
-
-//     // now I can play without things breaking
-//     playtrack();
-// }
-
-// // play the audio
-// function playtrack() { audioEl.play();}
-
-// function pausetrack() { audioEl.pause();}
-
-// function rewindtrack() {audioEl.currentTime = 0 ;}
-// // add the reactions (the event we want to listen for)
-
-// albumCovers.forEach(album => album.addEventListener('click', loadAudio));
-
-// playbutton.addEventListener('click',playtrack);
-// pausebutton.addEventListener('click',pausetrack);
-// rewindbutton.addEventListener('click',rewindtrack);
