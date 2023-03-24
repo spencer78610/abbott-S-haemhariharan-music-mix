@@ -124,8 +124,10 @@ body {
 
 #music-images {
     display: grid;
+    grid-column: 1/13;
     background: linear-gradient(to bottom, #f8a912, #f7803f, #faf566);
 }
+
 
 #text {
     text-align: center;
@@ -136,21 +138,16 @@ body {
 #music-images img {cursor: pointer;}
 
 .box {
-    text-align: center;
     grid-row: 2/3;
 }
 
-/* .placeholder {
-} */
 
 .box h3 {
     grid-row: 3/4;
     text-align: center;
 }
 
-/* .box h3 {
-    color: #fff;
-} */
+
 
 .line {
         grid-column: 2/12;
