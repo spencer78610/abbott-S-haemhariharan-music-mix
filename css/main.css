@@ -122,9 +122,7 @@ body {
 
 /* 5.icons */
 
-#music-images {
-    display: grid;
-    grid-column: 1/13;
+ footer {
     background: linear-gradient(to bottom, #f8a912, #f7803f, #faf566);
 }
 
@@ -135,13 +133,24 @@ body {
     font-size: 20px;
 }
 
-#music-images img {cursor: pointer;}
-
-.box {
-    grid-row: 2/3;
+footer img {
+    cursor: pointer;
 }
 
+.box {
+    display: flex;
+    justify-content: space-evenly;
+    grid-row: 2/3;
+    grid-column: 1/13;
+}
 
+.box h3{
+    order: 1;
+    grid-row: 3/4;
+    grid-column: 1/13;
+}
+
+/*
 .box h3 {
     grid-row: 3/4;
     text-align: center;
@@ -163,5 +172,5 @@ body {
     margin-top: 20px;
     grid-column: span 3;
     grid-row: 5/6;
-}
+} */
 
