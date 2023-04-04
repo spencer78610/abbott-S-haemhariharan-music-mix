@@ -1,12 +1,13 @@
 console.log('JS iss running...')
 
 let instermentIcons = document.querySelectorAll('#music-images img'),
-    audioEl = document.querySelector('audio'),
+    audioEl = null,
     playbutton = document.querySelectorAll('#play'),
     pausebutton = document.querySelectorAll('#pause'),
     theInsterments = document.querySelectorAll('#music-images img'),
     musicPlayer = document.querySelector('#music-player'),
     dropZones = document.querySelectorAll('.drop-zone');
+let playingAudio = [];
 
 
 function loadaudio() {
@@ -14,12 +15,27 @@ function loadaudio() {
     newAudioEl.src = `audio/${this.dataset.trackref}.mp3`;
     newAudioEl.load();
     newAudioEl.play();
+    playingAudio.push(newAudioEl);
+    musicPlayer.classList.add('playing');
 }
 
+function playtrack() {
+    playingAudio.forEach(audio => {
+        if (audio.paused) {
+            audio.play();
+        }
+    });
+    if (playingAudio.some(audio => !audio.paused)) {
+        musicPlayer.classList.add('playing');
+    }
+}
 
-function playtrack() { audioEl.play();}
-
-function pausetrack() { audioEl.pause();}
+function pausetrack() {
+    playingAudio.forEach(audio => audio.pause());
+    if (playingAudio.every(audio => audio.paused)) {
+        musicPlayer.classList.remove('playing');
+    }
+}
 
 function handleStartDrag() {
     console.log('started dragging this piece:', this);
@@ -42,10 +58,6 @@ function handleDrop(e) {
 
 instermentIcons.forEach(icon => icon.addEventListener('drop', loadaudio));
 
-// playbutton.addEventListener('click', playtrack);
-
-// pausebutton.addEventListener('click', pausetrack);
-
 playbutton.forEach(sound => sound.addEventListener('click', playtrack));
 
 pausebutton.forEach(sound => sound.addEventListener('click', pausetrack));
@@ -57,7 +69,5 @@ dropZones.forEach(zone => zone.addEventListener("dragover", handleDragOver));
 dropZones.forEach(zone => zone.addEventListener('drop', handleDrop));
 
 // bugs
-
-// music doesn't overlap or repeat
 
 // UX UI fixing
